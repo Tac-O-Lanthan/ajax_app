@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all  # すべてのレコードを@postsに代入 変数名の複数形はレコードの項目が増えたため変更されており、あくまで可読性のため
-  end
-
-  def new
+    @posts = Post.all.order(id: "DESC")
+    # すべてのレコードを@postsに代入 変数名の複数形はレコードの項目が増えたため変更されており、あくまで可読性のため
   end
 
   def create
